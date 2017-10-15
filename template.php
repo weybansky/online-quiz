@@ -1,13 +1,14 @@
-<!-- Default variables -->
-<?php require("../include/variables.php"); ?>
 <?php
+  // Default variables
+  require("../include/variables.php");
   // Declaring Custom Variable
   $pageName = "Template";
+
+  // Other Includes
+  include("../include/header.php");
+  include("../include/menu.php");
+  require("../include/mysqli_connect.php");
 ?>
-<!-- The Header -->
-<?php include("../include/header.php"); ?>
-<!-- The Menu -->
-<?php include("../include/menu.php"); ?>
 
 <!-- Content -->
 <div class="container">

@@ -1,7 +1,23 @@
 <?php
+  // Default variables
+  require("../include/variables.php");
+  // Declaring Custom Variable
+  $pageName = "Results";
 
-  // If not logged in-> go to login.php
+  // Other Includes
+  include("../include/header.php");
+  include("../include/menu.php");
+  require("../include/mysqli_connect.php");
+?>
 
-  // else load register.php
+<!-- Content -->
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-12">
+      Results
+    </div>
+  </div>
+</div>
 
- ?>
+<!-- The Footer -->
+<?php include("../include/footer.php"); ?>

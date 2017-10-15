@@ -1,9 +1,9 @@
 <?php
+  session_start();
+
   // Default variables
   $pageName = "Home";
   $siteName = "Online Test";
-  $titleTag = $pageName. " | " .$siteName;
-
 
   // session variables
   $loggedin = isset($_SESSION['loggedin'])? $_SESSION['loggedin'] : false;

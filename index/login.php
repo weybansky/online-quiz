@@ -1,16 +1,31 @@
-<?php session_start();
-  // $_SESSION['loggedin'] = false;
-?>
-
-<!-- Default variables -->
-<?php require("../include/variables.php"); ?>
 <?php
+  // Default variables
+  require("../include/variables.php");
   // Declaring Custom Variable
   $pageName = "Login";
+
+  // Other Includes
+  include("../include/header.php");
+  include("../include/menu.php");
+  require("../include/mysqli_connect.php");
 ?>
-<!-- The Header -->
-<?php include("../include/header.php"); ?>
-<?php include("../include/menu.php"); ?>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <?php
+      if ($loggedin == true){
+        // header('location:profile.php');
+        echo '<p class="text-center alert alert-success">You are already logged in</p>';
+        echo '<p class="text-center alert alert-danger">Please log out first to login a new user</p>';
+        header('location:profile.php');
+      }else {
+        echo '<p class="text-center alert alert-info">Please log in</p>';
+      }
+       ?>
+    </div>
+  </div>
+</div>
 
 <!-- Content -->
 <div class="container">
@@ -28,7 +43,7 @@
           <input required name="password" type="password" class="form-control" placeholder="password">
         </div>
         <div class="form-group">
-          <button class="btn btn-primary" type="submit" name="login">Login</button>
+          <button class="form-control btn btn-primary" type="submit" name="login">Login</button>
         </div>
       </form>
     </div>
@@ -50,8 +65,6 @@
   // header(location:index.php);
 
  ?>
-
-
 
  <!-- The Footer -->
  <?php include("../include/footer.php"); ?>
