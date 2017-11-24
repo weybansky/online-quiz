@@ -22,9 +22,11 @@
          $newUserSex   = $_POST['sex'];
          $newUsername  = $_POST['username'];
          $newPassword  = $_POST['password'];
+         //  Encrypting password
+         $newPassword  = sha1($newPassword);
 
          // $sqlInsertNewUser = "INSERT INTO users(firstName, lastName, email, sex, username, passowrd) VALUES('$newUserFName', '$newUserLName', $newUserEmail, $newUserSex, $newUsername, $newPassword) ";
-         $sqlInsertNewUser = "INSERT INTO users(firstName, lastName, email, sex, username, password) VALUES('$newUserFName', '$newUserLName', '$newUserEmail', '$newUserSex', '$newUsername', '$newPassword') ";
+         $sqlInsertNewUser = "INSERT INTO users(id, firstName, lastName, email, sex, username, password) VALUES('', '$newUserFName', '$newUserLName', '$newUserEmail', '$newUserSex', '$newUsername', '$newPassword') ";
          if (mysqli_query($conn, $sqlInsertNewUser)){
            echo '<div class="text-center alert alert-success">
            <i style="color:green;" class="fa fa-check-circle fa-3x" aria-hidden="true"></i><br>

@@ -7,7 +7,7 @@
   // Other Includes
   include("../include/header.php");
   include("../include/menu.php");
-  require("../include/mysqli_connect.php");
+  include("../include/mysqli_connect.php");
 ?>
 
 <!-- Content -->
